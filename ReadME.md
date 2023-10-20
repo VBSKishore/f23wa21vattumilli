@@ -1,0 +1,1 @@
+:q for exiting from terminal
