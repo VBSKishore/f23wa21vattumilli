@@ -23,9 +23,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/mydata',mydataRouter)
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+var mydataRouter = require('./routes/mydata');
+var computationRouter = require('./routes/computation');  // Include this line
+ 
+app.use('/mydata', mydataRouter);
+app.use('/computation', computationRouter);
+
 
 // error handler
 app.use(function(err, req, res, next) {
