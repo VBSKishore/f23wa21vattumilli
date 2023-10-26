@@ -1,16 +1,19 @@
-var express = require('express');
-var router = express.Router();
-// Define the "computation" route
+/* GET users listing. */
+var ran1 = Math.random() * 100;
+var ran2 = Math.random() * 200;
+var num1 = 0;
+var num2 = 0;
+var num3 = 0;
+ 
 router.get('/', function(req, res, next) {
- var x = parseFloat(req.query.x) || (Math.random() * 10);
- var angleRadians = calcAngle(x, 10); // Assuming a hypotenuse of 10
- // Format the response string
- var responseString = `Math.cosh applied to ${x} is ${angleRadians}`;
- // Send the response
- res.send(responseString);
+ 
+ 
+    num1 = Math.log(ran1);
+    num2 = Math.log(ran2);
+    num3 = Math.log(ran1);
+ 
+    res.send(`The Random Numbers are ${ran1} and ${ran2} <br><br> log applied to ${ran1} is ${num1} <br><br> log applied to ${ran2} is ${num2} <br><br> log applied to ${ran1} is ${num3}`);
+ 
 });
-
-function calcAngle(adjacent, hypotenuse) {
- return Math.cosh(adjacent / hypotenuse);
-}
+ 
 module.exports = router;
